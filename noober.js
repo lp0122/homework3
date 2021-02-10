@@ -17,13 +17,21 @@ function pageLoad() {
   console.log('Number of Passengers = ' + passenger1.numberOfPassengers)
   console.log('purple = ' + passenger1.purpleRequested)
 
-  if (passenger1.numberOfPassengers > 3) {
-    levelOfService = 'Noober XL'
+  if (ride.length>1) {
+    levelOfService = 'Noober Pool'
   } else if (passenger1.purpleRequested == true) {
     levelOfService = 'Noober Purple'
-  } else if (ride.length > 1) {
-    levelOfService = 'Noober Pool'
-  } else levelOfService = 'Noober X'
+  } else if (passenger1.numberOfPassengers > 3) {
+    levelOfService = 'Noober XL'
+  } else {levelOfService = 'Noober X'}
+  
+  // if (passenger1.numberOfPassengers > 3) {
+  //   levelOfService = 'Noober XL'
+  // } else if (passenger1.purpleRequested == true) {
+  //   levelOfService = 'Noober Purple'
+  // } else if (ride.length > 1) {
+  //   levelOfService = 'Noober Pool'
+  // } else levelOfService = 'Noober X'
 
   // I'm not sure what should be prioritized, if purple is requested but number of passengers > 3, should it be Noober XL vs. Noober Purple?
   // I prioritized number of passengers over purple.
